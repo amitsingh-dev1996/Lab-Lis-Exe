@@ -1,0 +1,407 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\New LIS  updated\\VSoftLIS_Interface\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|d:\\new lis  updated\\vsoftlis_interface\\vsoftlis_interface\\app_code\\common\\messageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\common\\messageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\vsoftlismain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\vsoftlismain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app_code\\bll\\messageprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\bll\\messageprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app_code\\dll\\communicationbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\dll\\communicationbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app_code\\bll\\communicationframehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\bll\\communicationframehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\vsoftlisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\vsoftlisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface.common\\bo\\analyzertypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|solutionrelative:vsoftlis_interface.common\\bo\\analyzertypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface.common\\bo\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|solutionrelative:vsoftlis_interface.common\\bo\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface.common\\webapicommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|solutionrelative:vsoftlis_interface.common\\webapicommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\vsoftlismain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\vsoftlismain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app_code\\vsoftserverdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\vsoftserverdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app_code\\common\\cacheddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\common\\cacheddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface.common\\bo\\analyzeractiveversions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|solutionrelative:vsoftlis_interface.common\\bo\\analyzeractiveversions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\resources\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\resources\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\TestEasy\\TestEasyLIS_Interface\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Ssoft\\SsoftLIS_Interface\\SsoftLIS_Interface\\Properties\\Settings.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\TestEasyLISMAIN.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:VSoftLIS_Interface\\TestEasyLISMAIN.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app_code\\dll\\tcpcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\dll\\tcpcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface\\app_code\\dll\\serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B45AFD8-97ED-4835-ACF4-DD8D2400FBEC}|VSoftLIS_Interface\\VSoftLIS_Interface.csproj|solutionrelative:vsoftlis_interface\\app_code\\dll\\serialcommunication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|D:\\New LIS  updated\\VSoftLIS_Interface\\vsoftlis_interface.common\\bo\\lisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{842B3977-AB06-40E0-8CC8-C9EC94D95D8D}|VSoftLIS_Interface.Common\\VSoftLIS_Interface.Common.csproj|solutionrelative:vsoftlis_interface.common\\bo\\lisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\Enums.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface.Common\\BO\\Enums.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\Enums.cs",
+              "RelativeToolTip": "VSoftLIS_Interface.Common\\BO\\Enums.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwDoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VSoftLISMAIN.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\VSoftLISMAIN.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\VSoftLISMAIN.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\VSoftLISMAIN.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\VSoftLISMAIN.cs",
+              "ViewState": "AgIAAEsBAAAAAAAAAADwv14BAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-17T16:42:37.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MessageProcessor.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\BLL\\MessageProcessor.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\BLL\\MessageProcessor.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\BLL\\MessageProcessor.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\BLL\\MessageProcessor.cs",
+              "ViewState": "AgIAAAsHAAAAAAAAAAAAAAsHAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CommunicationBase.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\DLL\\CommunicationBase.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\DLL\\CommunicationBase.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\DLL\\CommunicationBase.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\DLL\\CommunicationBase.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAtwIIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CommunicationFrameHandler.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\BLL\\CommunicationFrameHandler.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\BLL\\CommunicationFrameHandler.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\BLL\\CommunicationFrameHandler.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\BLL\\CommunicationFrameHandler.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAWwFEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T09:25:31.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\Program.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\Program.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\Program.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\Program.cs",
+              "ViewState": "AgIAADIBAAAAAAAAAAAIwEQBAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App.config",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App.config",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App.config",
+              "RelativeToolTip": "VSoftLIS_Interface\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2023-10-27T11:04:50.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VSoftLISConfiguration.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\VSoftLISConfiguration.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\VSoftLISConfiguration.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\VSoftLISConfiguration.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\VSoftLISConfiguration.cs",
+              "ViewState": "AgIAAIoBAAAAAAAAAAD4v6UBAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MessageConfiguration.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\Common\\MessageConfiguration.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\Common\\MessageConfiguration.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\Common\\MessageConfiguration.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\Common\\MessageConfiguration.cs",
+              "ViewState": "AgIAAJoFAAAAAAAAAAAAAGIHAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WebAPICommon.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\WebAPICommon.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface.Common\\WebAPICommon.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\WebAPICommon.cs",
+              "RelativeToolTip": "VSoftLIS_Interface.Common\\WebAPICommon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T03:33:45.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AnalyzerTypes.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\AnalyzerTypes.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface.Common\\BO\\AnalyzerTypes.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\AnalyzerTypes.cs",
+              "RelativeToolTip": "VSoftLIS_Interface.Common\\BO\\AnalyzerTypes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T05:54:36.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VSoftLISMAIN.cs [Design]",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\VSoftLISMAIN.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\VSoftLISMAIN.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\VSoftLISMAIN.cs [Design]",
+              "RelativeToolTip": "VSoftLIS_Interface\\VSoftLISMAIN.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T12:37:16.304Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "VSoftServerData.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\VSoftServerData.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\VSoftServerData.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\VSoftServerData.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\VSoftServerData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T12:28:50.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CachedData.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\Common\\CachedData.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\Common\\CachedData.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\Common\\CachedData.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\Common\\CachedData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AnalyzerActiveVersions.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\AnalyzerActiveVersions.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface.Common\\BO\\AnalyzerActiveVersions.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\AnalyzerActiveVersions.cs",
+              "RelativeToolTip": "VSoftLIS_Interface.Common\\BO\\AnalyzerActiveVersions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T18:44:51.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\Properties\\Resources.Designer.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAABwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T15:28:44.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "favicon.ico -  [English (United States)] - Icon [21x21, 32 bit, BMP]",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\favicon.ico",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\favicon.ico",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\favicon.ico -  [English (United States)] - Icon [21x21, 32 bit, BMP]",
+              "RelativeToolTip": "VSoftLIS_Interface\\favicon.ico -  [English (United States)] - Icon [21x21, 32 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2024-02-17T15:29:03.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "favicon.ico -  [English (United States)] - Icon [21x21, 32 bit, BMP]",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\Resources\\favicon.ico",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\Resources\\favicon.ico",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\Resources\\favicon.ico -  [English (United States)] - Icon [21x21, 32 bit, BMP]",
+              "RelativeToolTip": "VSoftLIS_Interface\\Resources\\favicon.ico -  [English (United States)] - Icon [21x21, 32 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2024-02-17T15:29:00.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TestEasy\\TestEasyLIS_Interface\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\TestEasy\\TestEasyLIS_Interface\\Program.cs",
+              "ToolTip": "D:\\TestEasy\\TestEasyLIS_Interface\\Program.cs",
+              "RelativeToolTip": "..\\..\\TestEasy\\TestEasyLIS_Interface\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T17:54:23.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TestEasyLISMAIN.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\TestEasyLISMAIN.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\TestEasyLISMAIN.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\TestEasyLISMAIN.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\TestEasyLISMAIN.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T17:56:46.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Settings.Designer.cs",
+              "DocumentMoniker": "D:\\Ssoft\\SsoftLIS_Interface\\SsoftLIS_Interface\\Properties\\Settings.Designer.cs",
+              "RelativeDocumentMoniker": "..\\..\\Ssoft\\SsoftLIS_Interface\\SsoftLIS_Interface\\Properties\\Settings.Designer.cs",
+              "ToolTip": "D:\\Ssoft\\SsoftLIS_Interface\\SsoftLIS_Interface\\Properties\\Settings.Designer.cs",
+              "RelativeToolTip": "..\\..\\Ssoft\\SsoftLIS_Interface\\SsoftLIS_Interface\\Properties\\Settings.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-07-13T14:53:48.485Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "TCPCommunication.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\DLL\\TCPCommunication.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\DLL\\TCPCommunication.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\DLL\\TCPCommunication.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\DLL\\TCPCommunication.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "SerialCommunication.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\DLL\\SerialCommunication.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface\\App_Code\\DLL\\SerialCommunication.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface\\App_Code\\DLL\\SerialCommunication.cs",
+              "RelativeToolTip": "VSoftLIS_Interface\\App_Code\\DLL\\SerialCommunication.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LISConfiguration.cs",
+              "DocumentMoniker": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\LISConfiguration.cs",
+              "RelativeDocumentMoniker": "VSoftLIS_Interface.Common\\BO\\LISConfiguration.cs",
+              "ToolTip": "D:\\New LIS  updated\\VSoftLIS_Interface\\VSoftLIS_Interface.Common\\BO\\LISConfiguration.cs",
+              "RelativeToolTip": "VSoftLIS_Interface.Common\\BO\\LISConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-10-16T18:02:42.831Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

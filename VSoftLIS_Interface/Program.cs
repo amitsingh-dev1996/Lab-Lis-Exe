@@ -1,0 +1,339 @@
+﻿using VSoftLIS_Interface.Common;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.IO.Pipes;
+using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
+using System.Data;
+
+namespace VSoftLIS_Interface
+{
+    static class Program
+    {
+        internal static bool IsDebugMode = false;
+        internal static string LoginUserCode = "";
+        internal static int AnalyzerId = 0;
+        internal static AnalyzerConfiguration AnalyzerConfiguration;
+        public static Analyzer analyzer = null;
+        public static string CurrentLisVersionNumber = "1.1.1.0";
+        private static int lisVersionWarningCount = 0;
+        internal static string LocalIpAddress = "";
+        public static string BlockClosingApp_Reason = "";
+
+        public const int analyzerTypeId_ICPThermo = 26, analyzerTypeId_LCMS = 28, analyzerTypeId_BiotekReader = 35, analyzerTypeId_Navios = 49, analyzerTypeId_RotorGene = 44, analyzerTypeId_KingfisherPCR = 68, analyzerTypeId_AgilentIcpms = 32,
+            analyzerTypeId_QuantStudioManual = 9999, analyzerTypeId_BDFacts = 15, analyzerTypeId_Dimension = 33;
+
+        internal static int LocationId { get { return CommonSettings.LocationId; } }
+
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main(string[] args)
+        {
+            try
+            {
+
+                //https://www.codeproject.com/Articles/43182/Centralised-Exception-Handling-in-C-Windows-Applic
+                Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
+                AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+
+                //Application.Run(new SqlCeExplorer());
+
+                if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["IsDebugMode"]))
+                    IsDebugMode = bool.Parse(ConfigurationManager.AppSettings["IsDebugMode"]);
+
+                TextLogger.WriteLogEntry("ServiceLogs", "LIS EXE opened with Arguments: " + String.Join(" ## ", Environment.GetCommandLineArgs()));
+
+                LocalIpAddress = InterfaceHelper.GetLocalIPAddress();
+
+                //CommonSettings.ApplicationDataFolder_Common = CommonSettings.ApplicationDataFolder = InterfaceHelper.CombineMultiplePaths(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), Application.ProductName);
+                LocalSqlCE objLocalSqlCE = new LocalSqlCE(CommonSettings.LocalDbFileFullPathSqlce);
+                TextLogger.WriteLogEntry("ServiceLogs", "LocalSqlCE constructor call ended.");
+
+                DataTable dtConfiguration = LocalSqlCE.ExecuteDataSet("select LocationId from tbl_GlobalConfiguration").Tables[0];
+                CommonSettings.LocationId = (int)dtConfiguration.Rows[0]["LocationId"];
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+
+                Form formToLoad = null;
+
+                if (!Program.IsDebugMode && args.Length == 0)
+                {
+                    MessageBox.Show("Not allowed to open LIS manually.");
+                    Application.Exit();
+                    return;
+                }
+
+                if (!Program.IsDebugMode)
+                {
+                    try
+                    {
+                        AnalyzerConfiguration = InterfaceHelper.DeserializeFromJson(args[0], typeof(AnalyzerConfiguration)) as AnalyzerConfiguration;
+                        TextLogger.WriteLogEntry("ServiceLogs", "AnalyzerId: " + AnalyzerConfiguration.AnalyzerId + ", Read AnalyzerId from arguments");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Invalid arguments passed: " + args[0] + Environment.NewLine + "Error: " +
+                            ex.Message +
+                        (ex.InnerException != null ? Environment.NewLine + ex.InnerException.Message : ""),
+                        "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+
+                        ex.Data.Add("args", args[0]);
+                        BLL.UiMediator.LogAndShowError(AnalyzerConfiguration?.AnalyzerId ?? 0, ex);
+                    }
+                }
+                else
+                {
+                    AnalyzerConfiguration = new AnalyzerConfiguration();
+                    AnalyzerConfiguration.AnalyzerId = int.Parse(ConfigurationManager.AppSettings["IntrumentId"]);
+                    TextLogger.WriteLogEntry("ServiceLogs", "AnalyzerId: " + AnalyzerConfiguration.AnalyzerId + ", Read AnalyzerId from cofig file");
+                }
+
+                if (AnalyzerConfiguration.AnalyzerId == 0)
+                {
+                    InterfaceHelper.AcquireLockForSingleInstance(AttemptTillAcquire: true);
+                    formToLoad = new VSoftLISConfiguration();
+
+                    TextLogger.WriteLogEntry("ServiceLogs", "Calling function to open all configured LIS");
+                    new LISManager().RunAllConfiguredLIS();
+                }
+                else
+                {
+                    try
+                    {
+                        TextLogger.WriteLogEntry("ServiceLogs", "AnalyzerId: " + AnalyzerConfiguration.AnalyzerId + ", Reading configurations");
+                        formToLoad = new VSoftLISMAIN();
+
+                        AnalyzerId = AnalyzerConfiguration.AnalyzerId;
+                        CachedData.UpdateAnalyzerDetails(Program.AnalyzerId);
+                        analyzer = CachedData.Analyzer;
+                        if (analyzer == null || analyzer.instrumentname == "")
+                        {
+                            throw new Exception("Analyzer does not exist with Id " + AnalyzerId);
+                        }
+                        CommonSettings.ApplicationDataFolder = InterfaceHelper.CombineMultiplePaths(CommonSettings.ApplicationDataFolder, analyzer.instrumentname);
+
+                        if (!Program.IsDebugMode)
+                        {
+                            AnalyzerConfiguration.ConnectionSettings.IsCharbiConnected = false;
+                            AnalyzerConfiguration.ConnectionSettings.ResultCheckInterval = 10;
+
+                            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["VSoftLisApiBaseUrl"]))
+                                CommonSettings.VSoftLisApiBaseUrl = ConfigurationManager.AppSettings["VSoftLisApiBaseUrl"];
+
+                            if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["VSoftApiBaseUrl"]))
+
+
+                                AnalyzerConfiguration.ConnectionSettings_WO = InterfaceHelper.CopyObject(AnalyzerConfiguration.ConnectionSettings) as ConnectionSettings;
+
+                            //TODO: configure dual LIS
+                            //TODO: set separate foldername in CommonSettings.ApplicationDataFolder for bulk WO exe
+                            //AnalyzerConfiguration.ConnectionSettings_WO.AdditionalSettings =
+                        }
+                        else
+                        {
+                            AnalyzerConfiguration.ConnectionSettings = new ConnectionSettings
+                            {
+                                TCP_IPAddress = ConfigurationManager.AppSettings["TCP_HostIpAddress"],
+                                TCP_PortNumber = InterfaceHelper.ConvertToNullableInt(ConfigurationManager.AppSettings["TCP_HostPort"]),
+                                Serial_PortName = ConfigurationManager.AppSettings["SerialPortName"],
+                                Serial_BaudRate = InterfaceHelper.ConvertToNullableInt(ConfigurationManager.AppSettings["SerialBaudRate"]) ?? 9600,
+                                Serial_Parity = InterfaceHelper.ConvertToNullableInt(ConfigurationManager.AppSettings["SerialParity"]) ?? 0,
+                                Serial_StopBits = InterfaceHelper.ConvertToNullableInt(ConfigurationManager.AppSettings["SerialStopBits"]) ?? 1,
+                                Serial_DataBits = InterfaceHelper.ConvertToNullableInt(ConfigurationManager.AppSettings["SerialDataBits"]) ?? 8,
+                                FilePath = !String.IsNullOrEmpty(ConfigurationManager.AppSettings["ResultFilePickupPath"]) ? ConfigurationManager.AppSettings["ResultFilePickupPath"] : ConfigurationManager.AppSettings["WorkOrderOutputPath"],
+
+                                IsCharbiConnected = ConfigurationManager.AppSettings["Mode"]?.Equals("Charbi", StringComparison.InvariantCultureIgnoreCase) ?? true,
+                                ResultCheckInterval = Convert.ToInt32(ConfigurationManager.AppSettings["ResultCheckInterval"])
+                            };
+
+                            AnalyzerConfiguration.ConnectionSettings.ConnectionType = InterfaceHelper.DetectConnectionType(AnalyzerConfiguration.ConnectionSettings);
+
+                            AnalyzerConfiguration.ConnectionSettings_WO = InterfaceHelper.CopyObject(AnalyzerConfiguration.ConnectionSettings) as ConnectionSettings;
+
+                            AnalyzerConfiguration.ConnectionSettings_WO.TCP_IPAddress = ConfigurationManager.AppSettings["TCP_HostIpAddress_BulkWO"];
+                            AnalyzerConfiguration.ConnectionSettings_WO.TCP_PortNumber = InterfaceHelper.ConvertToNullableInt(ConfigurationManager.AppSettings["TCP_HostPort_BulkWO"]);
+                            AnalyzerConfiguration.ConnectionSettings_WO.FilePath = ConfigurationManager.AppSettings["WorkOrderOutputPath"];
+                            AnalyzerConfiguration.ConnectionSettings_WO.ConnectionType = AnalyzerConfiguration.ConnectionSettings.ConnectionType = InterfaceHelper.DetectConnectionType(AnalyzerConfiguration.ConnectionSettings_WO);
+
+                            AnalyzerConfiguration.LisVersion = new LISVersion();
+
+                            CommonSettings.VSoftLisApiBaseUrl = ConfigurationManager.AppSettings["VSoftLisApiBaseUrl"];
+
+                        }
+
+                        bool IsSamePortForBulkWO = false;
+                        if (AnalyzerConfiguration.ConnectionSettings_WO.TCP_PortNumber == AnalyzerConfiguration.ConnectionSettings.TCP_PortNumber)
+                            IsSamePortForBulkWO = true;
+                        else
+                            IsSamePortForBulkWO = false;
+
+                        if (AnalyzerConfiguration.ConnectionSettings_WO.TCP_PortNumber.HasValue && !IsSamePortForBulkWO)
+                            CommonSettings.ApplicationDataFolder = CommonSettings.ApplicationDataFolder + "_BulkWO";
+
+                        formToLoad.Shown += new EventHandler(delegate (object s, EventArgs ev)
+                        {
+                            string strConnInfo = "";
+                            if (AnalyzerConfiguration.ConnectionSettings.ConnectionType == ConnectionType.TCP)
+                                strConnInfo = AnalyzerConfiguration.ConnectionSettings.TCP_IPAddress + ":" + AnalyzerConfiguration.ConnectionSettings.TCP_PortNumber;
+                            else if (AnalyzerConfiguration.ConnectionSettings.ConnectionType == ConnectionType.Serial)
+                            {
+                                strConnInfo = AnalyzerConfiguration.ConnectionSettings.Serial_PortName + "/" +
+                                    AnalyzerConfiguration.ConnectionSettings.Serial_BaudRate + "/" +
+                                    ((System.IO.Ports.Parity)AnalyzerConfiguration.ConnectionSettings.Serial_Parity).ToString() + "/" +
+                                    ((System.IO.Ports.StopBits)AnalyzerConfiguration.ConnectionSettings.Serial_StopBits).ToString() + "/" +
+                                     AnalyzerConfiguration.ConnectionSettings.Serial_DataBits;
+                            }
+                            else if (AnalyzerConfiguration.ConnectionSettings.ConnectionType == ConnectionType.FilePickup || AnalyzerConfiguration.ConnectionSettings.ConnectionType == ConnectionType.FileConnected)
+                            {
+                                strConnInfo = AnalyzerConfiguration.ConnectionSettings.FilePath;
+                            }
+
+                            if (!String.IsNullOrEmpty(strConnInfo))
+                                formToLoad.Text += " (" + strConnInfo + ")";
+                        });
+
+                        TextLogger.WriteLogEntry("ServiceLogs", "AnalyzerId: " + AnalyzerConfiguration.AnalyzerId + ", LIS EXE successfully opened");
+                    }
+                    catch (Exception ex)
+                    {
+                        BLL.UiMediator.LogAndShowError(AnalyzerId, ex);
+                    }
+                }
+
+                if (AnalyzerConfiguration.AnalyzerId > 0)
+                {
+                    formToLoad.Text += " - " + analyzer.instrumentname;
+                }
+                if (formToLoad != null)
+                {
+                    formToLoad.Text += " - v" + CurrentLisVersionNumber /*AnalyzerConfiguration.LisVersion?.VersionNumber*/;
+                }
+
+                if (!Program.IsDebugMode && AnalyzerConfiguration.LisVersion.VersionNumber != CurrentLisVersionNumber)
+                {
+                    MessageBox.Show("Latest version number " + AnalyzerConfiguration.LisVersion.VersionNumber + " does not match  with EXE version number " + CurrentLisVersionNumber, (!String.IsNullOrEmpty(analyzer.instrumentname) ? analyzer.instrumentname : CommonSettings.ProductName));
+                    Environment.Exit(-1);
+                    return;
+                }
+
+                //keep checking latest lis version, and restart EXE with warning message if mismatch found
+                if (!IsDebugMode)
+                {
+                    new Thread(() =>
+                    {
+                        while (true)
+                        {
+                            List<AnalyzerActiveVersions> analyzerActiveVersions = InterfaceHelper.GetLisVersionsForAnalyzers(new List<int> { analyzer.instrumentid });
+                            LISVersion lisVersion = InterfaceHelper.PopulateLatestVersion(analyzerActiveVersions.Single().ActiveVersions);
+
+                            if (lisVersion.VersionNumber != CurrentLisVersionNumber)
+                            {
+                                if (lisVersion.IsPriority || lisVersionWarningCount > 10)
+                                {
+                                    while (true)
+                                    {
+                                        if (BlockClosingApp_Reason == "")
+                                            RestartApplication();
+                                    }
+                                }
+                                else
+                                {
+                                    lisVersionWarningCount++;
+                                    MessageBox.Show($"New LIS version {lisVersion.VersionNumber} is available, kindly restart LIS manually to avoid disturbance in processing." + Environment.NewLine +
+                                        "If not done, LIS will restart automatically after some time.");
+                                }
+                            }
+
+                            Thread.Sleep(5 * 60 * 1000);
+                        }
+                    });
+                }
+
+                Application.Run(formToLoad);
+                Environment.Exit(-1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message +
+                        (ex.InnerException != null ? Environment.NewLine + ex.InnerException.Message : ""),
+                        "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                BLL.UiMediator.LogAndShowError(Program.AnalyzerId, ex);
+            }
+        }
+
+        public static bool EnsureUserLogin()
+        {
+            if (!String.IsNullOrEmpty(Program.LoginUserCode))
+                return true;
+
+            VSoftLISLogin frmLogin = new VSoftLISLogin();
+            if (frmLogin.ShowDialog() == DialogResult.OK)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            // All exceptions thrown by the main thread are handled over this method
+            BLL.UiMediator.LogAndShowError(Program.AnalyzerId, e.Exception);
+        }
+
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            // All exceptions thrown by additional threads are handled in this method
+            BLL.UiMediator.LogAndShowError(Program.AnalyzerId, (e.ExceptionObject as Exception));
+
+            //// Suspend the current thread for now to stop the exception from throwing.
+            //System.Threading.Thread.CurrentThread.Suspend();
+        }
+
+        public static void RestartApplication()
+        {
+            if (BlockClosingApp_Reason.Length > 0)
+            {
+                MessageBox.Show("Kindly wait for some time to avoid issues, " + Environment.NewLine + BlockClosingApp_Reason, "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //System.Diagnostics.Process.Start(Application.ExecutablePath);
+            //MainForm.MainFormSelfReference.Close();
+            //exit application and latest vesion will be opened by LISManager
+            Environment.Exit(-1);
+        }
+
+        public static bool UpdateLocationId(int LocationId, string UserCode = "")
+        {
+            if (String.IsNullOrEmpty(UserCode))
+                UserCode = Program.LoginUserCode;
+
+            if (Program.LocationId > 0 && LocationId != Program.LocationId)
+            {
+                if (MessageBox.Show("You have selected new lab location for configuration on this system, it will inactivate LIS of previous location." + Environment.NewLine +
+                    "Are you sure to continue?", "Location Changed", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
+                    == DialogResult.No)
+                    return false;
+
+                LocalSqlCE.ExecuteNonQuery(
+                    LocalSqlCE.PrepareCommand("update tbl_LISSetting set IsActive=0 where LocationId<>@LocationId",
+                    new Dictionary<string, object>() { { "LocationId", LocationId } }));
+            }
+
+            CommonSettings.LocationId = LocationId;
+
+            LocalSqlCE.ExecuteNonQuery(
+                    LocalSqlCE.PrepareCommand("update tbl_GlobalConfiguration set LocationId=@LocationId, LastUpdatedBy=@UserCode",
+                    new Dictionary<string, object>() { { "LocationId", LocationId }, { "UserCode", UserCode } }));
+
+            return true;
+        }
+    }
+}

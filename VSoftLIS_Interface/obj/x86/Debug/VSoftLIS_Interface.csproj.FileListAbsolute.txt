@@ -1,0 +1,189 @@
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe.config
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Data.SqlServerCe.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe.config
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.AssemblyReference.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.SuggestedBindingRedirects.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISConfiguration.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISLogin.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISMAIN.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.Properties.Resources.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.SqlCeExplorer.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.GenerateResource.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CoreCompileInputs.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CopyComplete
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.pdb
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe.config
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.pdb
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.dll
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.dll
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.dll
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.dll
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.dll
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.pdb
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe.config
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.pdb
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.xml
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.xml
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.xml
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.xml
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.xml
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.xml
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.AssemblyReference.cache
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.SuggestedBindingRedirects.cache
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISConfiguration.resources
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISLogin.resources
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISMAIN.resources
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.Properties.Resources.resources
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.SqlCeExplorer.resources
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.GenerateResource.cache
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CoreCompileInputs.cache
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CopyComplete
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.exe
+D:\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe.config
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Data.SqlServerCe.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe.config
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.AssemblyReference.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.SuggestedBindingRedirects.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISConfiguration.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISLogin.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISMAIN.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.Properties.Resources.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.SqlCeExplorer.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.GenerateResource.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CoreCompileInputs.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CopyComplete
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Cmmn Bkp\E6402\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.pdb
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe.config
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.pdb
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.dll
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.dll
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.dll
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.dll
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.dll
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.pdb
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe.config
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.pdb
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.xml
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.xml
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.xml
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.xml
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.xml
+D:\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.xml
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.AssemblyReference.cache
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.SuggestedBindingRedirects.cache
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISConfiguration.resources
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISLogin.resources
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISMAIN.resources
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.Properties.Resources.resources
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.SqlCeExplorer.resources
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.GenerateResource.cache
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CoreCompileInputs.cache
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CopyComplete
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.exe
+D:\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe.config
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Data.SqlServerCe.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.dll
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe.config
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.pdb
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.xml
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.AssemblyReference.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.SuggestedBindingRedirects.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISConfiguration.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISLogin.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISMAIN.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.Properties.Resources.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.SqlCeExplorer.resources
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.GenerateResource.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CoreCompileInputs.cache
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CopyComplete
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.exe
+D:\AMIT SINGH (APPLICATION AND WEB SITES)\Downloads\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.pdb
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.AssemblyReference.cache
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISConfiguration.resources
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISLogin.resources
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.VSoftLISMAIN.resources
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.Properties.Resources.resources
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.SqlCeExplorer.resources
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.GenerateResource.cache
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.csproj.CoreCompileInputs.cache
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe.config
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.exe
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.pdb
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.dll
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.dll
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.dll
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.dll
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.dll
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.pdb
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\VSoftLIS_Interface.Common.exe.config
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.pdb
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\DotNetZip.xml
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\Newtonsoft.Json.xml
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Configuration.ConfigurationManager.xml
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.AccessControl.xml
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Permissions.xml
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\bin\x86\Debug\System.Security.Principal.Windows.xml
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.exe
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.pdb
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS_Interface.exe.config
+D:\New LIS  updated\VSoftLIS_Interface\VSoftLIS_Interface\obj\x86\Debug\VSoftLIS.2F380EF0.Up2Date
