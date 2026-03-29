@@ -1105,7 +1105,6 @@ namespace VSoftLIS_Interface.Common
                     #endregion
                     break;
 
-
                 case 152:
                     #region DxH900
                     IsFieldSizeInBytes = false;
@@ -1811,9 +1810,8 @@ namespace VSoftLIS_Interface.Common
                     QcResultRecordInfo.AddRecordField(QcResultRecordInfo.SequenceNumber);
                     QcResultRecordInfo.TestID_ManufacturersTestCode = new StringFieldInfo(3, 200);
                     QcResultRecordInfo.AddRecordField(QcResultRecordInfo.TestID_ManufacturersTestCode);
-
+                    #endregion
                     break;
-                #endregion
 
                 case 157:
                     #region SNIBE ASTM - Maglumi X8
@@ -1877,6 +1875,94 @@ namespace VSoftLIS_Interface.Common
                     QueryRecordInfo.AddRecordField(new RecordFieldInfo(3) { ComponentCount = 2 });
                     QueryRecordInfo.SampleID = new StringFieldInfo(3, 22) { ComponentNumber = 2 };
                     QueryRecordInfo.AddRecordField(QueryRecordInfo.SampleID);
+                    QueryRecordInfo.AddRecordField(new RecordFieldInfo(5));
+                    QueryRecordInfo.TestID_ManufacturersTestCode = new StringFieldInfo(5, 10) { DefaultValue = "ALL" };
+                    QueryRecordInfo.AddRecordField(QueryRecordInfo.TestID_ManufacturersTestCode);
+                    QueryRecordInfo.AddRecordField(new StringFieldInfo(13, 1) { DefaultValue = "O" });
+
+                    TerminationRecordInfo = new TerminationRecordInfo(3);
+                    TerminationRecordInfo.AddRecordField(TerminationRecordInfo.RecordType);
+                    TerminationRecordInfo.AddRecordField(TerminationRecordInfo.SequenceNumber);
+                    TerminationRecordInfo.AddRecordField(new StringFieldInfo(3, 1) { DefaultValue = "N" });
+                    #endregion
+                    break;
+
+                case 158:
+                    #region MISPA CX4
+                    IsFieldSizeInBytes = false;
+                    FieldDelimiter = '|';
+                    ComponentDelimiter = '^';
+                    RepeatDelimiter = '\\';
+                    HeaderAndTerminationRecordRequired = true;
+
+                    HeaderRecordInfo = new HeaderRecordInfo(14);
+                    HeaderRecordInfo.AddRecordField(HeaderRecordInfo.RecordType);
+                    HeaderRecordInfo.SequenceNumber.FieldNumber = 0;
+                    HeaderRecordInfo.DelimiterCharacters = new StringFieldInfo(2, 4) { DefaultValue = @"|\^&" };
+                    HeaderRecordInfo.AddRecordField(HeaderRecordInfo.DelimiterCharacters);
+                    HeaderRecordInfo.SenderID = new StringFieldInfo(5, 20) { DefaultValue = "Analyzer" };
+                    HeaderRecordInfo.AddRecordField(HeaderRecordInfo.SenderID);
+                    HeaderRecordInfo.ReceiverID = new StringFieldInfo(10, 20) { DefaultValue = "LIS" };
+                    HeaderRecordInfo.AddRecordField(HeaderRecordInfo.ReceiverID);
+                    HeaderRecordInfo.VersionNumber = new StringFieldInfo(13, 1) { DefaultValue = "1" };
+                    HeaderRecordInfo.AddRecordField(HeaderRecordInfo.VersionNumber);
+                    HeaderRecordInfo.AddRecordField(new DateFieldInfo(14, "YYYYMMDDHHMMSS") { IsCurrentDateTime = true });
+
+                    PatientRecordInfo = new PatientRecordInfo(15);
+                    PatientRecordInfo.AddRecordField(PatientRecordInfo.RecordType);
+                    PatientRecordInfo.AddRecordField(PatientRecordInfo.SequenceNumber);
+                    PatientRecordInfo.PatientName = new StringFieldInfo(6, 30);
+                    PatientRecordInfo.AddRecordField(PatientRecordInfo.PatientName);
+                    PatientRecordInfo.Gender = new StringFieldInfo(9, 1) { ValidValues = new List<object> { "M", "F", "U" } };
+                    PatientRecordInfo.AddRecordField(PatientRecordInfo.Gender);
+                    PatientRecordInfo.AddRecordField(new RecordFieldInfo(15) { ComponentCount = 2 });
+                    PatientRecordInfo.Age = new NumericFieldInfo(15, 3) { ComponentNumber = 1 };
+                    PatientRecordInfo.AddRecordField(PatientRecordInfo.Age);
+                    PatientRecordInfo.AddRecordField(new StringFieldInfo(15, 1) { DefaultValue = "Y", ComponentNumber = 2 });
+
+                    OrderRecordInfo = new OrderRecordInfo(26);
+                    OrderRecordInfo.AddRecordField(OrderRecordInfo.RecordType);
+                    OrderRecordInfo.AddRecordField(OrderRecordInfo.SequenceNumber);
+                    OrderRecordInfo.AddRecordField(new RecordFieldInfo(3) { ComponentCount = 5 });
+                    OrderRecordInfo.SampleID = new StringFieldInfo(3, 22) { ComponentNumber = 1 }; // SampleId
+                    OrderRecordInfo.AddRecordField(OrderRecordInfo.SampleID);
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(3, 6) { DefaultValue = "1", ComponentNumber = 2 });//Sample No
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(3, 1) { DefaultValue = "1", ComponentNumber = 3 });// Disk No
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(3, 2) { DefaultValue = "1", ComponentNumber = 4 });// Position No
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(3, 1) { DefaultValue = "N", ComponentNumber = 5 });// Dilution
+                    OrderRecordInfo.AddRecordField(new RecordFieldInfo(4) { ComponentCount = 2 });
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(4, 20) { ComponentNumber = 1 });//Qc Name
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(4, 15) { ComponentNumber = 2 });//Qc Lot No
+                    OrderRecordInfo.AddRecordField(new RecordFieldInfo(6) { DefaultValue = "R" });
+                    OrderRecordInfo.AddRecordField(new DateFieldInfo(7, "YYYYMMDDHHMMSS") { IsCurrentDateTime = true });
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(16, 1) { DefaultValue = "1" });
+                    OrderRecordInfo.AddRecordField(new StringFieldInfo(26, 1) { DefaultValue = "O" });
+
+                    ResultRecordInfo = new ResultRecordInfo(13);
+                    ResultRecordInfo.AddRecordField(ResultRecordInfo.RecordType);
+                    ResultRecordInfo.AddRecordField(ResultRecordInfo.SequenceNumber);
+                    ResultRecordInfo.AddRecordField(new RecordFieldInfo(3) { ComponentCount = 4 });
+                    ResultRecordInfo.TestID_ManufacturersTestCode = new StringFieldInfo(3, 10) { ComponentNumber = 4 };
+                    ResultRecordInfo.AddRecordField(ResultRecordInfo.TestID_ManufacturersTestCode);
+                    ResultRecordInfo.TestValue = new NumericFieldInfo(4, 12) { IsMandatory = true };
+                    ResultRecordInfo.AddRecordField(ResultRecordInfo.TestValue);
+                    ResultRecordInfo.Units = new StringFieldInfo(5, 10);
+                    ResultRecordInfo.AddRecordField(ResultRecordInfo.Units);
+                    ResultRecordInfo.ResultAbnormalFlags = new StringFieldInfo(7, 1);
+                    ResultRecordInfo.AddRecordField(ResultRecordInfo.ResultAbnormalFlags);
+                    ResultRecordInfo.ResultedDateTime = new DateFieldInfo(13) { IsMandatory = true };
+                    ResultRecordInfo.AddRecordField(ResultRecordInfo.ResultedDateTime);
+
+                    QueryRecordInfo = new QueryRecordInfo(13);
+                    QueryRecordInfo.AddRecordField(QueryRecordInfo.RecordType);
+                    QueryRecordInfo.AddRecordField(QueryRecordInfo.SequenceNumber);
+                    QueryRecordInfo.AddRecordField(new RecordFieldInfo(3) { ComponentCount = 5 });
+                    QueryRecordInfo.SampleID = new StringFieldInfo(3, 22) { ComponentNumber = 1 }; // SampleId
+                    QueryRecordInfo.AddRecordField(QueryRecordInfo.SampleID);
+                    QueryRecordInfo.AddRecordField(new StringFieldInfo(3, 6) { DefaultValue = "1", ComponentNumber = 2 });//Sample No
+                    QueryRecordInfo.AddRecordField(new StringFieldInfo(3, 1) { DefaultValue = "1", ComponentNumber = 3 });// Disk No
+                    QueryRecordInfo.AddRecordField(new StringFieldInfo(3, 2) { DefaultValue = "1", ComponentNumber = 4 });// Position No
+                    QueryRecordInfo.AddRecordField(new StringFieldInfo(3, 1) { DefaultValue = "N", ComponentNumber = 5 });// Dilution
                     QueryRecordInfo.AddRecordField(new RecordFieldInfo(5));
                     QueryRecordInfo.TestID_ManufacturersTestCode = new StringFieldInfo(5, 10) { DefaultValue = "ALL" };
                     QueryRecordInfo.AddRecordField(QueryRecordInfo.TestID_ManufacturersTestCode);

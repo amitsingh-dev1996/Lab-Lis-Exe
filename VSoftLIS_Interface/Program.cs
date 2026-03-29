@@ -18,7 +18,7 @@ namespace VSoftLIS_Interface
         internal static int AnalyzerId = 0;
         internal static AnalyzerConfiguration AnalyzerConfiguration;
         public static Analyzer analyzer = null;
-        public static string CurrentLisVersionNumber = "1.1.1.0";
+        public static string CurrentLisVersionNumber = "26.01.0.02";
         private static int lisVersionWarningCount = 0;
         internal static string LocalIpAddress = "";
         public static string BlockClosingApp_Reason = "";
@@ -62,14 +62,14 @@ namespace VSoftLIS_Interface
 
                 Form formToLoad = null;
 
-                if (!Program.IsDebugMode && args.Length == 0)
+                if (Program.IsDebugMode && args.Length == 0)
                 {
                     MessageBox.Show("Not allowed to open LIS manually.");
                     Application.Exit();
                     return;
                 }
 
-                if (!Program.IsDebugMode)
+                if (Program.IsDebugMode)
                 {
                     try
                     {
@@ -118,7 +118,7 @@ namespace VSoftLIS_Interface
                         }
                         CommonSettings.ApplicationDataFolder = InterfaceHelper.CombineMultiplePaths(CommonSettings.ApplicationDataFolder, analyzer.instrumentname);
 
-                        if (!Program.IsDebugMode)
+                        if (Program.IsDebugMode)
                         {
                             AnalyzerConfiguration.ConnectionSettings.IsCharbiConnected = false;
                             AnalyzerConfiguration.ConnectionSettings.ResultCheckInterval = 10;
@@ -127,7 +127,7 @@ namespace VSoftLIS_Interface
                                 CommonSettings.VSoftLisApiBaseUrl = ConfigurationManager.AppSettings["VSoftLisApiBaseUrl"];
 
                             if (!String.IsNullOrEmpty(ConfigurationManager.AppSettings["VSoftApiBaseUrl"]))
-
+                                //CommonSettings.VSoftApiBaseUrl = ConfigurationManager.AppSettings["VSoftApiBaseUrl"];
 
                                 AnalyzerConfiguration.ConnectionSettings_WO = InterfaceHelper.CopyObject(AnalyzerConfiguration.ConnectionSettings) as ConnectionSettings;
 
@@ -164,7 +164,7 @@ namespace VSoftLIS_Interface
                             AnalyzerConfiguration.LisVersion = new LISVersion();
 
                             CommonSettings.VSoftLisApiBaseUrl = ConfigurationManager.AppSettings["VSoftLisApiBaseUrl"];
-
+                            //CommonSettings.VSoftApiBaseUrl = ConfigurationManager.AppSettings["VSoftApiBaseUrl"];
                         }
 
                         bool IsSamePortForBulkWO = false;
@@ -215,7 +215,7 @@ namespace VSoftLIS_Interface
                     formToLoad.Text += " - v" + CurrentLisVersionNumber /*AnalyzerConfiguration.LisVersion?.VersionNumber*/;
                 }
 
-                if (!Program.IsDebugMode && AnalyzerConfiguration.LisVersion.VersionNumber != CurrentLisVersionNumber)
+                if (Program.IsDebugMode && AnalyzerConfiguration.LisVersion.VersionNumber != CurrentLisVersionNumber)
                 {
                     MessageBox.Show("Latest version number " + AnalyzerConfiguration.LisVersion.VersionNumber + " does not match  with EXE version number " + CurrentLisVersionNumber, (!String.IsNullOrEmpty(analyzer.instrumentname) ? analyzer.instrumentname : CommonSettings.ProductName));
                     Environment.Exit(-1);
@@ -223,7 +223,7 @@ namespace VSoftLIS_Interface
                 }
 
                 //keep checking latest lis version, and restart EXE with warning message if mismatch found
-                if (!IsDebugMode)
+                if (IsDebugMode)
                 {
                     new Thread(() =>
                     {

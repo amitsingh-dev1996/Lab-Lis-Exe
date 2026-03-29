@@ -1314,7 +1314,7 @@ namespace VSoftLIS_Interface.BLL
                             UiMediator.LogAndShowError(Program.AnalyzerId, ex, "Sample Skipped: " + strBarcodes + " (" + ex.Message + ")");
                         }
 
-                        if (bList != null)
+                        if (bList != null && !msgConfig.IsHL7)
                         {
                             List<string> worklistMessages = PrepareWorklistMessages(queryBarcodes, bList);
                             records.AddRange(worklistMessages);
@@ -1425,6 +1425,7 @@ namespace VSoftLIS_Interface.BLL
                         {
                             strHeader = strRecordReceived;
                             CollectCopyValues(strRecordReceived, msgConfig.HeaderRecordInfoHL7);
+                            CollectCopyValues(strRecordReceived, msgConfig.HeaderRecordInfoHL7ACKResponse);
                         }
                         if (strRecordReceived.Contains("QRD"))
                         {
@@ -1564,7 +1565,7 @@ namespace VSoftLIS_Interface.BLL
                         drResult = null;
                         riOrder = msgConfig.OrderRecordInfoHL7OBR.Copy();
 
-                        if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 && riOrder.SampleID != null)
+                        if ((msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6) && riOrder.SampleID != null)
                         {
 
                             barcode = (string)ExtractRecordValueHL7(strRecordReceived, riOrder, riOrder.SampleID);
@@ -1881,7 +1882,7 @@ namespace VSoftLIS_Interface.BLL
                             TextLogger.WriteLogEntry("Debugging", records.Count + " records generated for barcode: " + barcodesCommaSeparated);
                         }
                         //Non HL7 machines work list preparating
-                        if (bList != null && (msgConfig.AnalyzerTypeID != AnalyzerTypes.ATELLICA || msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6))
+                        if (bList != null && msgConfig.AnalyzerTypeID != AnalyzerTypes.ATELLICA && msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6)
                         {
                             List<string> worklistMessages = PrepareWorklistMessages(queryBarcodes, bList);
                             records.AddRange(worklistMessages);
@@ -2957,12 +2958,17 @@ namespace VSoftLIS_Interface.BLL
                             AddDisplayDataSegment_28(bList);
                             #endregion
                         }
-                        if(msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6)
-                        AddPatientRecordHL7(bList);
-                        //Patient Visit info
-                        AddPatientVisitRecordHl7();
-                        AddOrderRecordHL7SPM(bList, sequenceNumber_Order);
-                        AddOrderRecordHL7SAC(bList);
+                        if (msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6)
+                        {
+                            AddPatientRecordHL7(bList);
+                        }
+                        if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6)
+                        {
+                            //Patient Visit info
+                            AddPatientVisitRecordHl7();
+                            AddOrderRecordHL7SPM(bList, sequenceNumber_Order);
+                            AddOrderRecordHL7SAC(bList);
+                        }
 
                         if (msgConfig.IsFieldSizeInBytes)
                         {
@@ -3011,9 +3017,7 @@ namespace VSoftLIS_Interface.BLL
 
                             foreach (TestCode tCode in bList.testlist.OrderBy(r => r.instrumentCode)) //sorting added for AU
                             {
-                                AddOrderRecordHL7ORC(bList);
-                                AddOrderRecordHL7TQ1(bList);
-
+                                
                                 RecordInfo ri = AddOrderRecordHL7OBR(ref sequenceNumber_Order, bList.barcode, tCode.instrumentCode, ref sequenceNumber_EXZ600);
                                 if (ri.ActionCode != null)
                                 {
@@ -3040,8 +3044,6 @@ namespace VSoftLIS_Interface.BLL
                                 if (isCancellation)
                                     WOType = "Cancel";
 
-
-                                RecordInfo ri1 = AddOrderRecordHL7TCD(/*ref sequenceNumber_Order,*/ bList.barcode, tCode.instrumentCode);
                                 if (ri.ActionCode != null)
                                 {
                                     string ActionCode = "";
