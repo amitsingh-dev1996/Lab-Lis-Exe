@@ -75,6 +75,12 @@ namespace VSoftLIS_Interface.BLL
                     FrameSeparator = Characters.CR;
                     NewFrameForEachRecord = true;
                     break;
+
+                case 158: // MISPA_CX4
+                    SupportsChecksum = false;
+                    MaxCharacterDataCount = 10000;
+                    NewFrameForEachRecord = false;
+                    break;
             }
         }
 

@@ -1314,7 +1314,7 @@ namespace VSoftLIS_Interface.BLL
                             UiMediator.LogAndShowError(Program.AnalyzerId, ex, "Sample Skipped: " + strBarcodes + " (" + ex.Message + ")");
                         }
 
-                        if (bList != null)
+                        if (bList != null && !msgConfig.IsHL7)
                         {
                             List<string> worklistMessages = PrepareWorklistMessages(queryBarcodes, bList);
                             records.AddRange(worklistMessages);
@@ -1408,7 +1408,7 @@ namespace VSoftLIS_Interface.BLL
 
                     //Header Preparation and Value Copying which needs to resend in response 
                     #region Header Preparation and Value Copying which needs to resend in response 
-                    if (msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6) {
+                    if (msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6 && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4) {
                         if (strRecordReceived.Contains("MSH"))
                             CollectCopyValues(strRecordReceived, msgConfig.HeaderRecordInfoHL7ACK);
                         if (strRecordReceived.Contains("MSH"))
@@ -1419,12 +1419,13 @@ namespace VSoftLIS_Interface.BLL
                             CollectCopyValuesHL7OKResResults(strRecordReceived, msgConfig.HeaderRecordInfoHL7ACKMSAReqToResults);
                     }
                   
-                    if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6)
+                    if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 || msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
                     {
                         if (strRecordReceived.Contains("MSH"))
                         {
                             strHeader = strRecordReceived;
                             CollectCopyValues(strRecordReceived, msgConfig.HeaderRecordInfoHL7);
+                            CollectCopyValues(strRecordReceived, msgConfig.HeaderRecordInfoHL7ACKResponse);
                         }
                         if (strRecordReceived.Contains("QRD"))
                         {
@@ -1564,7 +1565,7 @@ namespace VSoftLIS_Interface.BLL
                         drResult = null;
                         riOrder = msgConfig.OrderRecordInfoHL7OBR.Copy();
 
-                        if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 && riOrder.SampleID != null)
+                        if ((msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 || msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4) && riOrder.SampleID != null)
                         {
 
                             barcode = (string)ExtractRecordValueHL7(strRecordReceived, riOrder, riOrder.SampleID);
@@ -1777,7 +1778,7 @@ namespace VSoftLIS_Interface.BLL
                                     }
                                     if (String.IsNullOrEmpty(resultAbnormalFlag))
                                     {
-                                        if(msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6)
+                                        if(msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 || msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
                                             resultAbnormalFlag = (string)ExtractRecordValueHL7(strRecordReceived, riResult, riResult.ResultAbnormalFlags, i);
                                         else
                                             resultAbnormalFlag = (string)ExtractRecordValueHL7Prefix(strRecordReceived, riResult, riResult.TestValue, i);
@@ -1874,14 +1875,14 @@ namespace VSoftLIS_Interface.BLL
                             UiMediator.LogAndShowError(Program.AnalyzerId, ex, "Sample Skipped: " + strBarcodes + " (" + ex.Message + ")");
                         }
 
-                        if (bList != null && (msgConfig.AnalyzerTypeID == AnalyzerTypes.ATELLICA || msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6))
+                        if (bList != null && (msgConfig.AnalyzerTypeID == AnalyzerTypes.ATELLICA || msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 || msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4))
                         {
                             List<string> worklistMessages = PrepareWorklistMessagesHL7(queryBarcodes, bList);
                             records.AddRange(worklistMessages);
                             TextLogger.WriteLogEntry("Debugging", records.Count + " records generated for barcode: " + barcodesCommaSeparated);
                         }
                         //Non HL7 machines work list preparating
-                        if (bList != null && (msgConfig.AnalyzerTypeID != AnalyzerTypes.ATELLICA || msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6))
+                        if (bList != null && msgConfig.AnalyzerTypeID != AnalyzerTypes.ATELLICA && msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6 && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
                         {
                             List<string> worklistMessages = PrepareWorklistMessages(queryBarcodes, bList);
                             records.AddRange(worklistMessages);
@@ -1923,7 +1924,7 @@ namespace VSoftLIS_Interface.BLL
             }
 
             // Records Preparation logics for HL7 and Non HL7 Machines
-            if (msgConfig.AnalyzerTypeID == AnalyzerTypes.ATELLICA || msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6)
+            if (msgConfig.AnalyzerTypeID == AnalyzerTypes.ATELLICA || msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 || msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
             {
                 PrepareFinalRecordsHL7(records);
             }
@@ -2859,7 +2860,7 @@ namespace VSoftLIS_Interface.BLL
                     AddQueryFilterSegment(strHeader);
                 }
 
-                if (!msgConfig.HeaderAndTerminationRecordRequired && msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6)
+                if (!msgConfig.HeaderAndTerminationRecordRequired && msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6 && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
                 {
                     //ACK to Machine
                     //AddHeaderRecordHL7ACK(strHeader);
@@ -2873,6 +2874,12 @@ namespace VSoftLIS_Interface.BLL
 
                     //Work List to machine
                     AddHeaderRecordHL7(strHeader);
+                }
+
+                if(msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
+                {
+                    HeaderRecordInfoHL7ACKResponseOrder(strHeader);
+                    AddMSARecordHL7ACK(strHeader);
                 }
 
                 if (barcodeList == null)
@@ -2957,12 +2964,24 @@ namespace VSoftLIS_Interface.BLL
                             AddDisplayDataSegment_28(bList);
                             #endregion
                         }
-                        if(msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6)
-                        AddPatientRecordHL7(bList);
-                        //Patient Visit info
-                        AddPatientVisitRecordHl7();
-                        AddOrderRecordHL7SPM(bList, sequenceNumber_Order);
-                        AddOrderRecordHL7SAC(bList);
+                        if (msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6 && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
+                        {
+                            AddPatientRecordHL7(bList);
+                        }
+                        if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
+                        {
+                            //Patient Visit info
+                            AddPatientVisitRecordHl7();
+                            AddOrderRecordHL7SPM(bList, sequenceNumber_Order);
+                            AddOrderRecordHL7SAC(bList);
+                        }
+
+                        if(msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
+                        {
+                            AddDisplayDataSegment_1(bList);
+                            AddDisplayDataSegment_2(bList);
+                            //AddDisplayDataSegment_3(bList);
+                        }
 
                         if (msgConfig.IsFieldSizeInBytes)
                         {
@@ -3011,8 +3030,11 @@ namespace VSoftLIS_Interface.BLL
 
                             foreach (TestCode tCode in bList.testlist.OrderBy(r => r.instrumentCode)) //sorting added for AU
                             {
-                                AddOrderRecordHL7ORC(bList);
-                                AddOrderRecordHL7TQ1(bList);
+                                if (msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
+                                {
+                                    AddOrderRecordHL7ORC(bList);
+                                    AddOrderRecordHL7TQ1(bList);
+                                }
 
                                 RecordInfo ri = AddOrderRecordHL7OBR(ref sequenceNumber_Order, bList.barcode, tCode.instrumentCode, ref sequenceNumber_EXZ600);
                                 if (ri.ActionCode != null)
@@ -3040,8 +3062,10 @@ namespace VSoftLIS_Interface.BLL
                                 if (isCancellation)
                                     WOType = "Cancel";
 
-
-                                RecordInfo ri1 = AddOrderRecordHL7TCD(/*ref sequenceNumber_Order,*/ bList.barcode, tCode.instrumentCode);
+                                if (msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
+                                {
+                                    RecordInfo ri1 = AddOrderRecordHL7TCD(/*ref sequenceNumber_Order,*/ bList.barcode, tCode.instrumentCode);
+                                } 
                                 if (ri.ActionCode != null)
                                 {
                                     string ActionCode = "";
@@ -3252,7 +3276,7 @@ namespace VSoftLIS_Interface.BLL
             {
                 if (!msgConfig.HeaderAndTerminationRecordRequired)
                 {
-                    if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6)
+                    if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 || msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
                     {
                         AddHeaderRecordHL7(strHeader);
                         AddMSARecordHL7ACK(strHeader);
@@ -3397,7 +3421,7 @@ namespace VSoftLIS_Interface.BLL
 
             try
             {
-                if (!msgConfig.HeaderAndTerminationRecordRequired && msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6)
+                if (!msgConfig.HeaderAndTerminationRecordRequired && msgConfig.AnalyzerTypeID != AnalyzerTypes.Zybio_EXZ_6000_H6 && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
                 {
                     // Header Message
                     ResultRecordInfoHL7ACKResults(strHeader);
@@ -3609,7 +3633,7 @@ namespace VSoftLIS_Interface.BLL
                         else
                             records[i] = records[i] + characterToAppendCR;
 
-                        if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6)
+                        if (msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 || msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
                         {
                             if (i == 3)
                                 records[i] = records[i] + characterToAppendFS + characterToAppendCR;
@@ -5147,10 +5171,15 @@ namespace VSoftLIS_Interface.BLL
         {
             RecordInfo ri = null;
 
-            if (riOrder == null || !msgConfig.SupportsMultipleTestcodes)
+            if (msgConfig.AnalyzerTypeID == AnalyzerTypes.MISPA_CX4)
+            {
+                riOrder = AddOrderRecordHL7DSP3_MISPA_CX4(barcode, testID_ManufacturersTestCode);
+            }
+
+            if (riOrder == null || !msgConfig.SupportsMultipleTestcodes && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
                 riOrder = AddNewRecordHL7WithSeqnnumber(msgConfig.OrderRecordInfoHL7OBR, (++sequenceNumber));
 
-            if(msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6)
+            if(msgConfig.AnalyzerTypeID == AnalyzerTypes.Zybio_EXZ_6000_H6 && msgConfig.AnalyzerTypeID != AnalyzerTypes.MISPA_CX4)
                 riOrder = AddNewRecordHL7WithSeqnnumber(msgConfig.DisplayDataSegment_TestCode, (++sequenceNumber_EXZ600));
 
             ri = riOrder;
@@ -5179,6 +5208,19 @@ namespace VSoftLIS_Interface.BLL
             SetRecordValue(ri, ri.SampleID, barcode);
             SetRecordValue(ri, ri.TestID_ManufacturersTestCode, testID_ManufacturersTestCode);
 
+            return ri;
+        }
+
+        private RecordInfo AddOrderRecordHL7DSP3_MISPA_CX4(string barcode, string testID_ManufacturersTestCode)
+        {
+            RecordInfo ri = null;
+            if (riOrder == null || !msgConfig.SupportsMultipleTestcodes)
+                riOrder = AddNewRecordHL7(msgConfig.DisplayDataSegment_TestCode);
+
+            ri = riOrder;
+
+            SetRecordValue(ri, ri.SampleID, barcode);
+            SetRecordValue(ri, ri.TestID_ManufacturersTestCode, testID_ManufacturersTestCode);
             return ri;
         }
 

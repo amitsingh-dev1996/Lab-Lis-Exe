@@ -95,6 +95,10 @@ namespace VSoftLIS_Interface.DLL
                 case 155: //Zybio EXZ 6000 H6
                     SupportsHandshake = false;
                     break;
+
+                case 158: //MISPA_CX4
+                    SupportsHandshake = false;
+                    break;
             }
 
             frameHandler = new CommunicationFrameHandler(_analyzer.instrumentid);
@@ -1109,9 +1113,10 @@ namespace VSoftLIS_Interface.DLL
             currentFrameSendRetryCount = 0;
             IsAwaitingACK = false;
         }
+
         private void SendPendingFrames()
         {
-            sendFrame:
+        sendFrame:
             //if (responseFrames != null && responseFrames.Any())
             if (responseFramesGuid != null && responseFramesGuid.Any())
             {

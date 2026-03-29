@@ -22,6 +22,7 @@ namespace VSoftLIS_Interface.Common
         CBC560 = 152,
         Biored_Variant_II = 153,
         Zybio_EXZ_6000_H6 = 155,
-        SNIBE_Maglumi_X8 = 157;
+        SNIBE_Maglumi_X8 = 157,
+        MISPA_CX4 = 158;
     }
 }

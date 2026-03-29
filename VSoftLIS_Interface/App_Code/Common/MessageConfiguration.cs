@@ -1105,7 +1105,6 @@ namespace VSoftLIS_Interface.Common
                     #endregion
                     break;
 
-
                 case 152:
                     #region DxH900
                     IsFieldSizeInBytes = false;
@@ -1811,9 +1810,8 @@ namespace VSoftLIS_Interface.Common
                     QcResultRecordInfo.AddRecordField(QcResultRecordInfo.SequenceNumber);
                     QcResultRecordInfo.TestID_ManufacturersTestCode = new StringFieldInfo(3, 200);
                     QcResultRecordInfo.AddRecordField(QcResultRecordInfo.TestID_ManufacturersTestCode);
-
+                    #endregion
                     break;
-                #endregion
 
                 case 157:
                     #region SNIBE ASTM - Maglumi X8
@@ -1886,6 +1884,241 @@ namespace VSoftLIS_Interface.Common
                     TerminationRecordInfo.AddRecordField(TerminationRecordInfo.RecordType);
                     TerminationRecordInfo.AddRecordField(TerminationRecordInfo.SequenceNumber);
                     TerminationRecordInfo.AddRecordField(new StringFieldInfo(3, 1) { DefaultValue = "N" });
+                    #endregion
+                    break;
+
+                case 158:
+                    #region MISPA CX4
+                    IsFieldSizeInBytes = false;
+                    FieldDelimiter = '|';
+                    ComponentDelimiter = '^';
+                    ComponentDelimiterHL7 = '&';
+                    RepeatDelimiter = '~';
+                    IsHL7 = true;
+                    //SupportsMultipleTestcodes = true;
+
+                    // =========================
+                    // MSH (HEADER)
+                    // =========================
+                    HeaderRecordInfoHL7 = new HeaderRecordInfoHL7(20);
+                    HeaderRecordInfoHL7.AddRecordField(HeaderRecordInfoHL7.RecordType);
+                    HeaderRecordInfoHL7.DelimiterCharacters = new StringFieldInfo(2, 4) { DefaultValue = @"^~\&" };
+                    HeaderRecordInfoHL7.AddRecordField(HeaderRecordInfoHL7.DelimiterCharacters);
+                    HeaderRecordInfoHL7.AddRecordField(new StringFieldInfo(3, 180)); // Sending App
+                    HeaderRecordInfoHL7.AddRecordField(new StringFieldInfo(4, 180)); // Sending Facility
+                    HeaderRecordInfoHL7.AddRecordField(new StringFieldInfo(5, 180)); // Receiving App
+                    HeaderRecordInfoHL7.AddRecordField(new StringFieldInfo(6, 180)); // Receiving Facility
+                    HeaderRecordInfoHL7.AddRecordField(new DateFieldInfo(7) { IsCurrentDateTime = true });
+                    HeaderRecordInfoHL7.AddRecordField(new StringFieldInfo(8, 40));
+                    HeaderRecordInfoHL7.MsgIdentifier = new StringFieldInfo(9, 7);
+                    HeaderRecordInfoHL7.AddRecordField(HeaderRecordInfoHL7.MsgIdentifier);
+                    HeaderRecordInfoHL7.MsgControlid = new StringFieldInfo(10, 20) { CopyKey_Incoming = "GUID" };
+                    HeaderRecordInfoHL7.AddRecordField(HeaderRecordInfoHL7.MsgControlid);
+                    HeaderRecordInfoHL7.AddRecordField(new RecordFieldInfo(11) { DefaultValue = "P" });
+                    HeaderRecordInfoHL7.AddRecordField(new StringFieldInfo(12, 60) { DefaultValue = "2.3.1" });
+                    HeaderRecordInfoHL7.AddRecordField(new StringFieldInfo(18, 10) { DefaultValue = "UNICODE" });
+
+                    HeaderRecordInfoHL7ACKResponse = new HeaderRecordInfoHL7ACKResponse(20);
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(HeaderRecordInfoHL7ACKResponse.RecordType);
+                    HeaderRecordInfoHL7ACKResponse.DelimiterCharacters = new StringFieldInfo(2, 4) { DefaultValue = @"^~\&" };
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(HeaderRecordInfoHL7ACKResponse.DelimiterCharacters);
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new StringFieldInfo(3, 180)); // Sending App
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new StringFieldInfo(4, 180)); // Sending Facility
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new StringFieldInfo(5, 180)); // Receiving App
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new StringFieldInfo(6, 180)); // Receiving Facility
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new DateFieldInfo(7) { IsCurrentDateTime = true });
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new StringFieldInfo(8, 40));
+                    HeaderRecordInfoHL7ACKResponse.MsgIdentifier = new StringFieldInfo(9, 7);
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(HeaderRecordInfoHL7ACKResponse.MsgIdentifier);
+                    HeaderRecordInfoHL7ACKResponse.MsgControlid = new StringFieldInfo(10, 20) { CopyKey_Incoming = "GUID-1" };
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(HeaderRecordInfoHL7ACKResponse.MsgControlid);
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new RecordFieldInfo(11) { DefaultValue = "P" });
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new StringFieldInfo(12, 60) { DefaultValue = "2.3.1" });
+                    HeaderRecordInfoHL7ACKResponse.AddRecordField(new StringFieldInfo(18, 10) { DefaultValue = "UNICODE" });
+
+                    // =========================
+                    // ACK HEADER
+                    // =========================
+                    HeaderRecordInfoHL7ACK = new HeaderRecordInfoHL7(20);
+                    HeaderRecordInfoHL7ACK.AddRecordField(HeaderRecordInfoHL7ACK.RecordType);
+                    HeaderRecordInfoHL7ACK.DelimiterCharacters = new StringFieldInfo(2, 4) { DefaultValue = @"^~\&" };
+                    HeaderRecordInfoHL7ACK.AddRecordField(HeaderRecordInfoHL7ACK.DelimiterCharacters);
+                    HeaderRecordInfoHL7ACK.AddRecordField(new StringFieldInfo(3, 180) { DefaultValue = "AnalyzerID" }); // Sending App
+                    HeaderRecordInfoHL7ACK.AddRecordField(new StringFieldInfo(4, 180) { DefaultValue = "CS6400" }); // Sending Facility
+                    HeaderRecordInfoHL7ACK.AddRecordField(new StringFieldInfo(5, 180) { DefaultValue = "VSoft"}); // Receiving App
+                    HeaderRecordInfoHL7ACK.AddRecordField(new DateFieldInfo(7) { IsCurrentDateTime = true });
+                    HeaderRecordInfoHL7ACK.AddRecordField(new StringFieldInfo(8, 40));
+                    HeaderRecordInfoHL7ACK.MsgIdentifier = new StringFieldInfo(9, 7) { DefaultValue = "ACK^R01" };
+                    HeaderRecordInfoHL7ACK.AddRecordField(HeaderRecordInfoHL7ACK.MsgIdentifier);
+                    HeaderRecordInfoHL7ACK.MsgControlid = new StringFieldInfo(10, 20) { CopyKey_Outgoing = "GUID" };
+                    HeaderRecordInfoHL7ACK.AddRecordField(HeaderRecordInfoHL7ACK.MsgControlid);
+                    HeaderRecordInfoHL7ACK.AddRecordField(new RecordFieldInfo(11) { DefaultValue = "P" });
+                    HeaderRecordInfoHL7ACK.AddRecordField(new StringFieldInfo(12, 60) { DefaultValue = "2.3.1" });
+                    HeaderRecordInfoHL7ACK.AddRecordField(new StringFieldInfo(18, 10) { DefaultValue = "UNICODE" });
+
+                    //Message Header Segment (MSH) ACK for Order which will sent to machine
+                    HeaderRecordInfoHL7ACKResponseOrder = new HeaderRecordInfoHL7ACKResponseOrder(21);
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(HeaderRecordInfoHL7ACKResponseOrder.RecordType);
+                    HeaderRecordInfoHL7ACKResponseOrder.DelimiterCharacters = new StringFieldInfo(2, 4) { DefaultValue = @"^~\&" };
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(HeaderRecordInfoHL7ACKResponseOrder.DelimiterCharacters);
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(new DateFieldInfo(7) { IsCurrentDateTime = true });
+                    HeaderRecordInfoHL7ACKResponseOrder.MsgIdentifier = new StringFieldInfo(9, 7) { DefaultValue = "DSR^Q03" };//MSG Identifier
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(HeaderRecordInfoHL7ACKResponseOrder.MsgIdentifier);
+                    HeaderRecordInfoHL7ACKResponseOrder.MsgControlid = new StringFieldInfo(10, 20) { CopyKey_Outgoing = "GUID-1" };//Message Control ID
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(HeaderRecordInfoHL7ACKResponseOrder.MsgControlid);
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(new RecordFieldInfo(11) { DefaultValue = "P" });
+                    HeaderRecordInfoHL7ACKResponseOrder.VersionNumber = new StringFieldInfo(12, 5) { DefaultValue = "2.3.1" };
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(HeaderRecordInfoHL7ACKResponseOrder.VersionNumber);
+                    HeaderRecordInfoHL7ACKResponseOrder.AddRecordField(new RecordFieldInfo(18) { DefaultValue = "UNICODE" });
+
+                    // =========================
+                    // PID (PATIENT)
+                    // =========================
+                    PatientRecordInfoHL7 = new PatientRecordInfoHL7(31);
+                    PatientRecordInfoHL7.AddRecordField(PatientRecordInfoHL7.RecordType);
+                    PatientRecordInfoHL7.PatientID = new StringFieldInfo(3, 16);
+                    PatientRecordInfoHL7.AddRecordField(PatientRecordInfoHL7.PatientID);
+                    PatientRecordInfoHL7.PatientName = new StringFieldInfo(5, 30);
+                    PatientRecordInfoHL7.AddRecordField(PatientRecordInfoHL7.PatientName);
+                    PatientRecordInfoHL7.DateOfBirth = new DateFieldInfo(7);
+                    PatientRecordInfoHL7.AddRecordField(PatientRecordInfoHL7.DateOfBirth);
+                    PatientRecordInfoHL7.Gender = new StringFieldInfo(8, 1);
+                    PatientRecordInfoHL7.AddRecordField(PatientRecordInfoHL7.Gender);
+                    PatientRecordInfoHL7.AddRecordField(new StringFieldInfo(18, 30)); // patient type
+                    PatientRecordInfoHL7.AddRecordField(new StringFieldInfo(31, 5));  // age
+
+                    // =========================
+                    // OBR (ORDER)
+                    // =========================
+                    OrderRecordInfoHL7OBR = new OrderRecordInfoHL7OBR(47);
+                    OrderRecordInfoHL7OBR.AddRecordField(OrderRecordInfoHL7OBR.RecordType);
+                    OrderRecordInfoHL7OBR.AddRecordField(OrderRecordInfoHL7OBR.SequenceNumber);
+                    OrderRecordInfoHL7OBR.SampleID = new StringFieldInfo(3, 22); // barcode
+                    OrderRecordInfoHL7OBR.AddRecordField(OrderRecordInfoHL7OBR.SampleID);
+                    OrderRecordInfoHL7OBR.AddRecordField(new StringFieldInfo(4, 5)); // sample no
+                    OrderRecordInfoHL7OBR.AddRecordField(new RecordFieldInfo(5) { ComponentCount = 2 });
+                    OrderRecordInfoHL7OBR.AddRecordField(new StringFieldInfo(5, 200) { DefaultValue="AnalyzerID" ,ComponentNumber = 1 });
+                    OrderRecordInfoHL7OBR.AddRecordField(new StringFieldInfo(5, 2) { DefaultValue = "CS6400" ,ComponentNumber = 2 });
+                    OrderRecordInfoHL7OBR.AddRecordField(new NumericFieldInfo(6, 1)); // Stat Mark
+                    OrderRecordInfoHL7OBR.SCT = new DateFieldInfo(8, "yyyyMMddHHmmss");
+                    OrderRecordInfoHL7OBR.AddRecordField(OrderRecordInfoHL7OBR.SCT);
+
+                    // =========================
+                    // OBX (RESULT)
+                    // =========================
+                    ResultRecordInfoHL7 = new ResultRecordInfoHL7(17);
+                    ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.RecordType);
+                    ResultRecordInfoHL7.SequenceNumber.FieldNumber = 0;
+                    ResultRecordInfoHL7.ResultAspects = new StringFieldInfo(2, 3);// NM/ST
+                    ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.ResultAspects);
+                    //ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.SequenceNumber);
+                    ResultRecordInfoHL7.AddRecordField(new RecordFieldInfo(4) { ComponentCount = 2 });
+                    ResultRecordInfoHL7.TestID_ManufacturersTestCode = new StringFieldInfo(4, 5) { ComponentNumber = 1};
+                    ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.TestID_ManufacturersTestCode);
+                    ResultRecordInfoHL7.TestValue = new NumericFieldInfo(5, 16);
+                    ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.TestValue);
+                    ResultRecordInfoHL7.Units = new StringFieldInfo(6, 12);
+                    ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.Units);
+                    ResultRecordInfoHL7.ResultAbnormalFlags = new StringFieldInfo(8, 5);
+                    ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.ResultAbnormalFlags);
+                    ResultRecordInfoHL7.ResultedDateTime = new DateFieldInfo(14) { IsMandatory = true };
+                    ResultRecordInfoHL7.AddRecordField(ResultRecordInfoHL7.ResultedDateTime);
+
+                    // =========================
+                    // QRD (QUERY)
+                    // =========================
+                    QueryDefinitionSegmentFromMachine = new QueryDefinitionSegmentFromMachine(12);
+                    QueryDefinitionSegmentFromMachine.AddRecordField(QueryDefinitionSegmentFromMachine.RecordType);
+                    QueryDefinitionSegmentFromMachine.AddRecordField(new DateFieldInfo(2));
+                    QueryDefinitionSegmentFromMachine.AddRecordField(new StringFieldInfo(3, 2)); // SN/BC
+                    QueryDefinitionSegmentFromMachine.AddRecordField(new StringFieldInfo(4, 1) { DefaultValue = "D" });
+                    QueryDefinitionSegmentFromMachine.MsgControlid = new StringFieldInfo(5, 10);
+                    QueryDefinitionSegmentFromMachine.AddRecordField(QueryDefinitionSegmentFromMachine.MsgControlid);
+                    QueryDefinitionSegmentFromMachine.SampleID = new StringFieldInfo(9, 30);
+                    QueryDefinitionSegmentFromMachine.AddRecordField(QueryDefinitionSegmentFromMachine.SampleID);
+                    QueryDefinitionSegmentFromMachine.AddRecordField(new StringFieldInfo(11, 8)); // rack^pos
+                    QueryDefinitionSegmentFromMachine.AddRecordField(new StringFieldInfo(12, 1)); // dilution
+
+                    // =========================
+                    // QRF
+                    // =========================
+                    QueryFilterSegment = new QueryFilterSegment(9);
+                    QueryFilterSegment.AddRecordField(QueryFilterSegment.RecordType);
+                    QueryFilterSegment.AddRecordField(new StringFieldInfo(2, 20));
+                    QueryFilterSegment.AddRecordField(new DateFieldInfo(3));
+                    QueryFilterSegment.AddRecordField(new DateFieldInfo(4));
+                    QueryFilterSegment.AddRecordField(new StringFieldInfo(7, 12) { DefaultValue = "RCT" });
+                    QueryFilterSegment.AddRecordField(new StringFieldInfo(8, 12) { DefaultValue = "COR" });
+                    QueryFilterSegment.AddRecordField(new StringFieldInfo(9, 12) { DefaultValue = "ALL" });
+
+                    // =========================
+                    // DSP-1 (Patient Info)
+                    // =========================
+                    DisplayDataSegment_1 = new DisplayDataSegment_1(31);
+                    DisplayDataSegment_1.AddRecordField(DisplayDataSegment_1.RecordType);
+                    DisplayDataSegment_1.AddRecordField(new NumericFieldInfo(2, 0) { DefaultValue = 1 });
+                    DisplayDataSegment_1.PatientID = new StringFieldInfo(4, 20);
+                    DisplayDataSegment_1.AddRecordField(DisplayDataSegment_1.PatientID);
+                    DisplayDataSegment_1.PatientName = new StringFieldInfo(6, 50);
+                    DisplayDataSegment_1.AddRecordField(DisplayDataSegment_1.PatientName);
+                    DisplayDataSegment_1.AddRecordField(new StringFieldInfo(7, 1) { DefaultValue = "^" });
+                    DisplayDataSegment_1.Gender = new StringFieldInfo(9, 1);
+                    DisplayDataSegment_1.AddRecordField(DisplayDataSegment_1.Gender);
+                    DisplayDataSegment_1.AddRecordField(new RecordFieldInfo(31) { ComponentCount = 2 });
+                    DisplayDataSegment_1.Age = new NumericFieldInfo(31, 3) { ComponentNumber = 1 };
+                    DisplayDataSegment_1.AddRecordField(DisplayDataSegment_1.Age);
+                    DisplayDataSegment_1.AddRecordField(new StringFieldInfo(31, 1) { DefaultValue = "Y", ComponentNumber = 2 });// AgeType
+
+                    // =========================
+                    // DSP-2 (Order Info)
+                    // =========================
+                    DisplayDataSegment_2 = new DisplayDataSegment_2(25);
+                    DisplayDataSegment_2.AddRecordField(DisplayDataSegment_2.RecordType);
+                    DisplayDataSegment_2.AddRecordField(new NumericFieldInfo(2, 0) { DefaultValue = 2 });
+                    DisplayDataSegment_2.SampleID = new StringFieldInfo(4, 22);
+                    DisplayDataSegment_2.AddRecordField(DisplayDataSegment_2.SampleID);
+                    DisplayDataSegment_2.AddRecordField(new RecordFieldInfo(6) { ComponentCount = 2 });
+                    DisplayDataSegment_2.AddRecordField(new StringFieldInfo(6, 10) { DefaultValue = "AnalyzerID", ComponentNumber = 1 });
+                    DisplayDataSegment_2.AddRecordField(new StringFieldInfo(6, 6) { DefaultValue = "CS6400", ComponentNumber = 2 });
+                    DisplayDataSegment_2.AddRecordField(new StringFieldInfo(7, 1) { DefaultValue = "N" });
+                    DisplayDataSegment_2.SCT = new DateFieldInfo(9, "yyyyMMddHHmmss");
+                    DisplayDataSegment_2.AddRecordField(DisplayDataSegment_2.SCT);
+                    DisplayDataSegment_2.AddRecordField(new StringFieldInfo(11, 1) { DefaultValue = "1" });
+                    //DisplayDataSegment_1.AddRecordField(new NumericFieldInfo(12, 6) { DefaultValue = "1" });//RACK NUMBER
+                    DisplayDataSegment_2.AddRecordField(new StringFieldInfo(14, 1) { DefaultValue = "N" });//Dilution
+                    DisplayDataSegment_2.AddRecordField(new DateFieldInfo(16) { IsCurrentDateTime = true });
+                    DisplayDataSegment_2.SampleType = new StringFieldInfo(17, 20) { DefaultValue = "0" };
+                    DisplayDataSegment_2.AddRecordField(DisplayDataSegment_2.SampleType);
+                    DisplayDataSegment_2.AddRecordField(new StringFieldInfo(22, 1) { DefaultValue = "1" });
+                    DisplayDataSegment_2.AddRecordField(new DateFieldInfo(24) { IsCurrentDateTime = true });
+
+                    // =========================
+                    // DSP-3 (Test List)
+                    // =========================
+                    DisplayDataSegment_TestCode = new DisplayDataSegment_TestCode(7);
+                    DisplayDataSegment_TestCode.AddRecordField(DisplayDataSegment_TestCode.RecordType);
+                    DisplayDataSegment_TestCode.AddRecordField(new NumericFieldInfo(2, 0) { DefaultValue = 3 });
+                    DisplayDataSegment_TestCode.TestCount = new NumericFieldInfo(4, 0);
+                    DisplayDataSegment_TestCode.AddRecordField(DisplayDataSegment_TestCode.TestCount);
+                    DisplayDataSegment_TestCode.TestID_ManufacturersTestCode = new StringFieldInfo(5, 1000) { SupportsMultipleValues = true };
+                    DisplayDataSegment_TestCode.AddRecordField(DisplayDataSegment_TestCode.TestID_ManufacturersTestCode);
+
+                    // =========================
+                    // MSA
+                    // =========================
+                    OrderRecordInfoHL7MSA = new OrderRecordInfoHL7MSA(4);
+                    OrderRecordInfoHL7MSA.AddRecordField(OrderRecordInfoHL7MSA.RecordType);
+                    OrderRecordInfoHL7MSA.AddRecordField(new StringFieldInfo(2, 2) { DefaultValue = "AA" });
+                    OrderRecordInfoHL7MSA.AddRecordField(new StringFieldInfo(3, 20) { CopyKey_Outgoing = "GUID" });
+
+                    //Message Acknowledgment Segment(MSA)
+                    OrderRecordInfoHL7MSA = new OrderRecordInfoHL7MSA(8);
+                    OrderRecordInfoHL7MSA.AddRecordField(OrderRecordInfoHL7MSA.RecordType);
+                    OrderRecordInfoHL7MSA.ActionCode = new StringFieldInfo(2, 2) { DefaultValue = "OK" };
+                    OrderRecordInfoHL7MSA.AddRecordField(OrderRecordInfoHL7MSA.ActionCode);
+                    OrderRecordInfoHL7MSA.MsgControlid = new StringFieldInfo(3, 20) { CopyKey_Outgoing = "GUID" };//Message Control ID
+                    OrderRecordInfoHL7MSA.AddRecordField(new NumericFieldInfo(7, 1) { DefaultValue = "0" });
+
                     #endregion
                     break;
 
