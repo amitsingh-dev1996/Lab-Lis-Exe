@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/VSoftLIS_Interface/App_Code/Common/MessageConfiguration.cs
+/VSoftLIS_Interface/App_Code/BLL/MessageProcessor.cs
